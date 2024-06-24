@@ -24,6 +24,8 @@ import http from 'node:http'
 // Cabeçalhos (Requisição/resposta) => Metadados
 // Informações adicionais
 
+// HTTP Status Code
+
 const users = []
 
 const server = http.createServer((req, res) => {
@@ -42,10 +44,10 @@ const server = http.createServer((req, res) => {
       email: 'ecthon@gmail.com'
     })
 
-    return res.end('Criação de usuário')
+    return res.writeHead(201).end()
   }
 
-  return res.end('Hello World')
+  return res.writeHead(404).end('Not Found ❌')
 })
 
 server.listen(3333)
