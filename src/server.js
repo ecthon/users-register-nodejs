@@ -18,4 +18,9 @@ const server = http.createServer(async (req, res) => {
   return res.writeHead(404).end('Not Found ❌')
 })
 
-server.listen(3333)
+server.listen(
+  3333,
+  () => {
+    console.log("✨ Server running on the port 3333.")
+    console.log("🌏 http://localhost:3333/users")
+  })
