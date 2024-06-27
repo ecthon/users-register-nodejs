@@ -20,7 +20,7 @@ export class Database {
   }
 
   select(table) {
-    const data = this.#database[table] ?? []
+    let data = this.#database[table] ?? []
     return data
   }
 
@@ -30,6 +30,7 @@ export class Database {
     } else {
       this.#database[table] = [data]
     }
+    this.#persist()
     return data
   }
 }
